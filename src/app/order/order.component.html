@@ -1,0 +1,26 @@
+<div class="container mt-5">
+    <h1 class="mb-4">Order History</h1>
+   
+    <div class="table-responsive">
+        <table id="order" class="table table-hover">
+            <thead>
+                <tr>
+                    <th><a href="#" class="text-decoration-none text-dark">Order ID <i class="bi bi-arrow-down-up"></i></a></th>
+                    <th><a href="#" class="text-decoration-none text-dark">Address <i class="bi bi-arrow-down-up"></i></a></th>
+                    <th>Number</th>
+                    <th><a href="#" class="text-decoration-none text-dark">Total Amount <i class="bi bi-arrow-down-up"></i></a></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of orderlist" >
+                    <td>#{{item.id}}</td>
+                    <td>{{item.address}}</td>
+                   
+                    <td><i class="bi bi-credit-card"></i>{{item.phonenumber}}</td>
+                    <td>${{item.price}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+   
+</div>

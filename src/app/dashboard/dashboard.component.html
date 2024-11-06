@@ -1,0 +1,36 @@
+<!-- <div class="container-fluid">
+
+    @if (productList) {
+    <ngb-carousel>
+        <ng-template *ngFor="let item of productList" ngbSlide>
+            <a style="text-decoration: none;" routerLink="/productdetail/{{item.id}}" >
+                <div class="picsum-img-wrapper">
+                    <img class="fitment" [src]="item.imageurl" alt="Random first slide" />
+                </div>
+                <div class="carousel-caption">
+                    <h3>{{item.name}}</h3>
+                    <p>{{item.description}}</p>
+                </div>
+            </a>
+        </ng-template>
+
+    </ngb-carousel>
+    }
+</div> -->
+
+<div class="container">
+    <div class="row ">
+         
+            <h5>Trendy Products</h5>
+            <div class="card m-2"  *ngFor="let product of productList" style="width: 18rem; margin-top: 20px;">
+                <img src="{{product.imageurl}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{product.name | wordLimit:6 }}</h5>
+                    <p class="card-text">{{product.description | wordLimit:8  }}</p>
+                </div>
+                <a style="text-decoration: none;" routerLink="/productdetail/{{product.id}}"class="btn btn-primary">More Details</a>
+            </div>
+            
+         
+    </div>
+</div>

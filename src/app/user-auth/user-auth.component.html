@@ -1,0 +1,52 @@
+<div class="image" style="margin-left: 900px;">
+  <img src="assets/Image/pngwing.com (1).png" style="width: 200px; height: 200px;">
+</div>
+<div class="container" >
+ 
+    <div class="row" >
+      <div *ngIf="!toggle" class="col-4" >
+        <h2 class="text-center">Register User</h2>
+        <form  (submit)="Signup()" >
+          <div class="mb-3">
+            <label for="examplenameEmail1" class="form-label">Name</label>
+            <input [(ngModel)]="user.name" name="name" class="form-control" id="examplenameEmail1"  >
+           
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input [(ngModel)]="user.email" name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input [(ngModel)]="user.password" name="password" type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+           
+             <span>if you already registered click here to <span><a style="color: blue; cursor: pointer;" (click)="openLogin()">login</a></span></span>
+          <br>
+          <button type="submit" class="btn btn-primary">Signup</button>
+        </form>
+      </div>
+  
+      <!-- login -->
+      <div *ngIf="toggle" class="col-4" >
+        <h2 class="text-center">Login User</h2>
+
+        <form  (submit)="Login()" >
+          <label class="text-danger">{{loginfailed}}</label>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input [(ngModel)]="userlogin.email" name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input [(ngModel)]="userlogin.password" name="password" type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+             <span>if you dont registered click here to<span><a style="color: blue; cursor: pointer;" (click)="openSignup()"> Signup</a></span></span>
+          <br>
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>

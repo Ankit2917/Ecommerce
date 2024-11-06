@@ -1,0 +1,25 @@
+.search{
+    margin-left: 353px;
+    width: 648px;
+}
+.products {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    max-height: 200px;
+     width: 600px;
+    z-index: 1000; /* Ensure it appears above other elements */
+    margin-left: 600px;
+}
+.product-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    width: 600px;
+     
+}
+.product-item:last-child {
+    border-bottom: none;
+}

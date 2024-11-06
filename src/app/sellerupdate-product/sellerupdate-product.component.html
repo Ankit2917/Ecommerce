@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <label class="text-center" style="color: green;" >{{updatedmsg}}</label>
+            <form   (submit)="submit(product)">
+                <div class="mb-3">
+                    <input type="hidden" name="id" ngModel="{{product.id}}">
+                    <label for="ProductName" class="form-label">Product Name</label>
+                    <input [(ngModel)]="product.name" name="name" class="form-control" id="ProductName">
+                </div>
+                <div class="mb-3">
+                    <label for="Price" class="form-label">Price</label>
+                    <input [(ngModel)]="product.price" name="price" class="form-control" id="Price">
+                </div>
+                <div class="mb-3">
+                    <label for="Description" class="form-label">Description</label>
+                    <input [(ngModel)]="product.description" name="description"  class="form-control" id="Description">
+                </div>
+                <div class="mb-3">
+                    <label for="colour" class="form-label">colour</label>
+                    <input [(ngModel)]="product.colour" name="colour"  class="form-control" id="colour">
+                </div>
+                <div class="mb-3">
+                    <label for="Imageurl" class="form-label">Image url</label>
+                    <input  type="file" (change)="onFileSelected($event)" name="imageurl"  class="form-control" id="Imageurl">
+                </div>
+                <button type="submit" class="btn btn-primary form-control">Update</button>
+            </form>
+        </div>
+        <div class="col-4">
+            <img style="height: 400px; width: 400px;" [src]="product.imageurl">
+        </div>
+    </div>
+</div>
